@@ -26,12 +26,12 @@ public class GameManager : MonoBehaviour {
 
     public void Start()
     {
-        GameObject player = (GameObject) Instantiate(playerPrefab, new Vector3(-5, 0, 0), Quaternion.identity);
+        Instantiate(playerPrefab, new Vector3(-5, 0, 0), Quaternion.identity);
         InvokeRepeating("InvokeEnemy", 3f, 3f);
     }
 
     public void InvokeEnemy()
     {
-        GameObject enemy = (GameObject)Instantiate(enemyPrefab, new Vector3(9, Random.Range(-3f, 3f), 0), Quaternion.identity);
+        Instantiate(enemyPrefab, new Vector3(9, Random.Range(-3f, 3f), 0), Quaternion.identity);
     }
 }

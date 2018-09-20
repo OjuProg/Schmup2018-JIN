@@ -6,7 +6,12 @@ public abstract class BaseAvatar : MonoBehaviour {
 
     public float maxSpeed;
     public int maxHealth;
-    private int health;
+    public int health;
+
+    public void Start()
+    {
+        health = maxHealth;
+    }
 
     public void TakeDamage(int damageTaken)
     {
