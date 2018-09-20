@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour {
     // UI Management
     public Slider lifeSlider;
     public Slider energySlider;
+    public GameObject pausePanel;
 
     public void OnEnable()
     {
@@ -51,5 +52,10 @@ public class UIManager : MonoBehaviour {
         {
             Debug.Log("Dead.");
         }
+    }
+
+    public void TogglePauseMenu()
+    {
+        pausePanel.SetActive(!pausePanel.activeSelf);
     }
 }
