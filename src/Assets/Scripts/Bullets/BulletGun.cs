@@ -15,20 +15,20 @@ public class BulletGun : MonoBehaviour {
 
     // Bullet variables
     [SerializeField] private int numberOfSpiralBullets;
-    private BULLETTYPE currentBulletType;
-    private Bullet currentBulletData;
-    private float cooldownChrono;
+    [SerializeField]protected BULLETTYPE currentBulletType;
+    protected Bullet currentBulletData;
+    protected float cooldownChrono;
 
     // Fire Point Variables
     public GameObject firePoint;
-    private bool rotateFirePoint;
+    protected bool rotateFirePoint;
 
     // Energy variables
     public float energyMax;
     public float energy;
     public float energyRegenRate;
     public float costPerShot;
-    private bool canShoot;
+    protected bool canShoot;
 
     public void Fire()
     {
@@ -49,7 +49,7 @@ public class BulletGun : MonoBehaviour {
                     case BULLETTYPE.SIMPLE:
                         GameObject newBullet = (GameObject) Instantiate(simpleBulletPrefab, firePoint.transform.position, Quaternion.identity);
                         newBullet.GetComponent<SimpleBullet>().InitBullet(currentBulletData.damage, firePoint.transform.position,
-                                                                          currentBulletData.speed, Bullet.BULLETSIDE.PLAYER);
+                                                                          currentBulletData.speed, currentBulletData.bulletSide);
                         break;
                     case BULLETTYPE.DIAGONALE:
                         // Upper Bullet
@@ -58,14 +58,14 @@ public class BulletGun : MonoBehaviour {
                         newUpperBullet.GetComponent<DiagonalBullet>().InitBullet(currentBulletData.damage,
                                                                                  firePoint.transform.position,
                                                                                  currentBulletData.speed,
-                                                                                 Bullet.BULLETSIDE.PLAYER);
+                                                                                 currentBulletData.bulletSide);
                         // Lower Bullet
                         bulletRotation.eulerAngles = new Vector3(0, 0, -45);
                         GameObject newLowerBullet = (GameObject) Instantiate(diagonalBulletPrefab, transform.position, bulletRotation);
                         newLowerBullet.GetComponent<DiagonalBullet>().InitBullet(currentBulletData.damage,
                                                                                  firePoint.transform.position,
                                                                                  new Vector2(currentBulletData.speed.x, -currentBulletData.speed.y),
-                                                                                 Bullet.BULLETSIDE.PLAYER);
+                                                                                 currentBulletData.bulletSide);
                         break;
                     case BULLETTYPE.SPIRAL:
                         // We instanciate as many bullets as asked by the editor.
@@ -77,7 +77,7 @@ public class BulletGun : MonoBehaviour {
                             newSpiralBullet.GetComponent<SpiralBullet>().InitBullet(currentBulletData.damage,
                                                                                       firePoint.transform.position,
                                                                                       new Vector2(currentBulletData.speed.x, -currentBulletData.speed.y),
-                                                                                      Bullet.BULLETSIDE.PLAYER);
+                                                                                      currentBulletData.bulletSide);
                         }
                         break;
                     default:
@@ -97,9 +97,33 @@ public class BulletGun : MonoBehaviour {
         cooldownChrono = 0f;
         energy = energyMax;
         canShoot = true;
-        currentBulletData = simpleBulletPrefab.GetComponent<SimpleBullet>();
         rotateFirePoint = false;
         numberOfSpiralBullets = Mathf.Max(1, numberOfSpiralBullets);
+
+        switch (currentBulletType)
+        {
+            case BULLETTYPE.SIMPLE:
+                currentBulletData = simpleBulletPrefab.GetComponent<SimpleBullet>();
+                rotateFirePoint = false;
+                firePoint.transform.rotation = Quaternion.identity;
+                break;
+            case BULLETTYPE.DIAGONALE:
+                currentBulletData = diagonalBulletPrefab.GetComponent<DiagonalBullet>();
+                rotateFirePoint = false;
+                firePoint.transform.rotation = Quaternion.identity;
+                break;
+            case BULLETTYPE.SPIRAL:
+                currentBulletData = spiralBulletPrefab.GetComponent<SpiralBullet>();
+                rotateFirePoint = true;
+                firePoint.transform.rotation = Quaternion.identity;
+                break;
+            default:
+                currentBulletType = BULLETTYPE.SIMPLE;
+                currentBulletData = simpleBulletPrefab.GetComponent<SimpleBullet>();
+                rotateFirePoint = false;
+                firePoint.transform.rotation = Quaternion.identity;
+                break;
+        }
     }
 
     public void Update()

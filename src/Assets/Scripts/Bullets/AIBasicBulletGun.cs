@@ -2,27 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIBasicBulletGun : MonoBehaviour {
+public class AIBasicBulletGun : BulletGun {
 
-    public GameObject EnemyBulletPrefab;
-    private Bullet currentBulletType;
-    private float cooldownChrono;
-
-    public void Start()
-    {
-        cooldownChrono = 0f;
-        currentBulletType = EnemyBulletPrefab.GetComponent<SimpleBullet>();
-    }
-
-    public void Update()
+    public new void Update()
     {
         cooldownChrono += Time.deltaTime;
-        if (cooldownChrono > currentBulletType.cooldown)
+
+        if (rotateFirePoint)
         {
-            cooldownChrono = 0f;
-            GameObject newBullet = (GameObject)Instantiate(EnemyBulletPrefab, transform.position, Quaternion.identity);
-            newBullet.GetComponent<SimpleBullet>().InitBullet(currentBulletType.damage, transform.position,
-                                                              currentBulletType.speed, Bullet.BULLETSIDE.ENEMY);
+            firePoint.transform.Rotate(Vector3.forward, 1);
+        }
+
+        if(canShoot)
+        {
+            Fire();
         }
     }
 }

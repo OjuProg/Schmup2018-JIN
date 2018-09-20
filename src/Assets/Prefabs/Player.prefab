@@ -168,7 +168,7 @@ MonoBehaviour:
   firePoint: {fileID: 1125579269857104}
   energyMax: 10
   energy: 0
-  energyRegenRate: 0.5
+  energyRegenRate: 5
   costPerShot: 0.1
 --- !u!114 &114955639622768592
 MonoBehaviour:
