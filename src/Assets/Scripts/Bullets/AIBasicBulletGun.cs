@@ -5,24 +5,24 @@ using UnityEngine;
 public class AIBasicBulletGun : MonoBehaviour {
 
     public GameObject EnemyBulletPrefab;
-    [SerializeField] private int damage;
-    [SerializeField] private Vector2 speed;
-    [SerializeField] private float cooldown;
+    private Bullet currentBulletType;
     private float cooldownChrono;
 
     public void Start()
     {
         cooldownChrono = 0f;
+        currentBulletType = EnemyBulletPrefab.GetComponent<SimpleBullet>();
     }
 
     public void Update()
     {
         cooldownChrono += Time.deltaTime;
-        if (cooldownChrono > cooldown)
+        if (cooldownChrono > currentBulletType.cooldown)
         {
             cooldownChrono = 0f;
             GameObject newBullet = (GameObject)Instantiate(EnemyBulletPrefab, transform.position, Quaternion.identity);
-            newBullet.GetComponent<SimpleBullet>().InitBullet(damage, transform.position, speed, Bullet.BulletType.ENEMY);
+            newBullet.GetComponent<SimpleBullet>().InitBullet(currentBulletType.damage, transform.position, 
+                                                              currentBulletType.speed, Bullet.BulletType.ENEMY);
         }
     }
 }

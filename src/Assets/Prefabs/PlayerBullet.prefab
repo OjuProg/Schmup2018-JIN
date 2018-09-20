@@ -78,6 +78,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f55d47569fb3746a6b0719cb83e809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 5
+  cooldown: 0.5
+  speed: {x: 6, y: 0}
+  position: {x: 0, y: 0}
+  bulletType: 0
 --- !u!212 &212284991500947272
 SpriteRenderer:
   m_ObjectHideFlags: 1

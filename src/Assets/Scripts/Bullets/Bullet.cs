@@ -6,10 +6,11 @@ public abstract class Bullet : MonoBehaviour {
 
     public enum BulletType {PLAYER, ENEMY};
 
-    private int damage;
-    private Vector2 speed;
-    private Vector2 position;
-    private BulletType bulletType;
+    public int damage;
+    public float cooldown;
+    public Vector2 speed;
+    public Vector2 position;
+    public BulletType bulletType;
 
     public virtual void InitBullet(int damageValue, Vector2 bulletPosition, Vector2 bulletSpeed, BulletType newBulletType)
     {

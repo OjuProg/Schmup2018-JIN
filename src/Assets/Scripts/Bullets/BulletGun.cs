@@ -6,9 +6,7 @@ using UnityEngine.UI;
 public class BulletGun : MonoBehaviour {
 
     public GameObject simpleBulletPrefab;
-    [SerializeField] private int damage;
-    [SerializeField] private Vector2 speed;
-    [SerializeField] private float cooldown;
+    private Bullet currentBulletType;
     private float cooldownChrono;
 
     // Energy variables
@@ -20,7 +18,7 @@ public class BulletGun : MonoBehaviour {
 
     public void Fire()
     {
-        if(cooldownChrono > cooldown)
+        if(cooldownChrono > currentBulletType.cooldown)
         {
             // All the work around checking the energy goes here.
             if(canShoot)
@@ -30,7 +28,8 @@ public class BulletGun : MonoBehaviour {
 
                 // We instantiate the new bullet
                 GameObject newBullet = (GameObject)Instantiate(simpleBulletPrefab, transform.position, Quaternion.identity);
-                newBullet.GetComponent<SimpleBullet>().InitBullet(damage, transform.position, speed, Bullet.BulletType.PLAYER);
+                newBullet.GetComponent<SimpleBullet>().InitBullet(currentBulletType.damage, transform.position, 
+                                                                  currentBulletType.speed, Bullet.BulletType.PLAYER);
 
                 // We take care of the energy
                 energy -= costPerShot;
@@ -44,6 +43,7 @@ public class BulletGun : MonoBehaviour {
         cooldownChrono = 0f;
         energy = energyMax;
         canShoot = true;
+        currentBulletType = simpleBulletPrefab.GetComponent<SimpleBullet>();
     }
 
     public void Update()
