@@ -4,9 +4,14 @@ using UnityEngine;
 
 public abstract class BaseAvatar : MonoBehaviour {
 
+    // Standard Data.
     public float maxSpeed;
     public int maxHealth;
     public int health;
+
+    // Events.
+    public delegate void DeathAction(BaseAvatar baseAvatar);
+    public static event DeathAction OnDeath;
 
     public void Start()
     {
@@ -25,5 +30,9 @@ public abstract class BaseAvatar : MonoBehaviour {
     public void Die()
     {
         Destroy(gameObject);
+        if (OnDeath != null)
+        {
+            OnDeath(this);
+        }
     }
 }

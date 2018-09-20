@@ -14,6 +14,16 @@ public class UIManager : MonoBehaviour {
     public Slider lifeSlider;
     public Slider energySlider;
 
+    public void OnEnable()
+    {
+        BaseAvatar.OnDeath += StopGame;
+    }
+
+    public void OnDisable()
+    {
+        BaseAvatar.OnDeath -= StopGame;
+    }
+
     public void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -33,5 +43,13 @@ public class UIManager : MonoBehaviour {
     {
         lifeSlider.value = avatar.health;
         energySlider.value = bulletGun.energy;
+    }
+
+    public void StopGame(BaseAvatar baseAvatar)
+    {
+        if(baseAvatar.GetType() == typeof(PlayerAvatar))
+        {
+            Debug.Log("Dead.");
+        }
     }
 }
