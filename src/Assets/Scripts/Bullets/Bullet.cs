@@ -4,20 +4,20 @@ using UnityEngine;
 
 public abstract class Bullet : MonoBehaviour {
 
-    public enum BulletType {PLAYER, ENEMY};
+    public enum BULLETSIDE{PLAYER, ENEMY};
 
     public int damage;
     public float cooldown;
     public Vector2 speed;
     public Vector2 position;
-    public BulletType bulletType;
+    public BULLETSIDE bulletSide;
 
-    public virtual void InitBullet(int damageValue, Vector2 bulletPosition, Vector2 bulletSpeed, BulletType newBulletType)
+    public virtual void InitBullet(int damageValue, Vector2 bulletPosition, Vector2 bulletSpeed, BULLETSIDE newBulletSide)
     {
         damage = damageValue;
         position = bulletPosition;
         speed = bulletSpeed;
-        bulletType = newBulletType;
+        bulletSide = newBulletSide;
     }
 
     public virtual void UpdatePosition()
@@ -41,8 +41,8 @@ public abstract class Bullet : MonoBehaviour {
         BaseAvatar avatar = collision.GetComponent<BaseAvatar>();
         if(avatar != null)
         {
-            if(bulletType == BulletType.ENEMY && avatar.GetType() == typeof(PlayerAvatar) ||
-               bulletType == BulletType.PLAYER && avatar.GetType() == typeof(EnemyAvatar))
+            if(bulletSide == BULLETSIDE.ENEMY && avatar.GetType() == typeof(PlayerAvatar) ||
+               bulletSide == BULLETSIDE.PLAYER && avatar.GetType() == typeof(EnemyAvatar))
             {
                 avatar.TakeDamage(damage);
                 Destroy(gameObject);

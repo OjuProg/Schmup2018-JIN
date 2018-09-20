@@ -21,8 +21,8 @@ public class AIBasicBulletGun : MonoBehaviour {
         {
             cooldownChrono = 0f;
             GameObject newBullet = (GameObject)Instantiate(EnemyBulletPrefab, transform.position, Quaternion.identity);
-            newBullet.GetComponent<SimpleBullet>().InitBullet(currentBulletType.damage, transform.position, 
-                                                              currentBulletType.speed, Bullet.BulletType.ENEMY);
+            newBullet.GetComponent<SimpleBullet>().InitBullet(currentBulletType.damage, transform.position,
+                                                              currentBulletType.speed, Bullet.BULLETSIDE.ENEMY);
         }
     }
 }

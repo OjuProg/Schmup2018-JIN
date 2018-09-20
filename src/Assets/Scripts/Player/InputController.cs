@@ -19,5 +19,9 @@ public class InputController : MonoBehaviour {
         {
             bulletGun.Fire();
         }
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            bulletGun.BulletRotation();
+        }
     }
 }
