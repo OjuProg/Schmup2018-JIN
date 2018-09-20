@@ -14,6 +14,26 @@ public class GameManager : MonoBehaviour {
     public bool pause;
     public float enemySpawnCooldown;
 
+
+    public void OnEnable()
+    {
+        BaseAvatar.OnDeath += StopGame;
+    }
+
+    public void OnDisable()
+    {
+        BaseAvatar.OnDeath -= StopGame;
+    }
+
+    public void StopGame(BaseAvatar baseAvatar)
+    {
+        if (baseAvatar.GetType() == typeof(PlayerAvatar))
+        {
+            Time.timeScale = 0;
+            uiManager.ToggleGameOverMenu();
+        }
+    }
+
     private void Awake()
     {
         if(Instance == null)

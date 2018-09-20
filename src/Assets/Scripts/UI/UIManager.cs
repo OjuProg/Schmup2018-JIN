@@ -14,16 +14,7 @@ public class UIManager : MonoBehaviour {
     public Slider lifeSlider;
     public Slider energySlider;
     public GameObject pausePanel;
-
-    public void OnEnable()
-    {
-        BaseAvatar.OnDeath += StopGame;
-    }
-
-    public void OnDisable()
-    {
-        BaseAvatar.OnDeath -= StopGame;
-    }
+    public GameObject gameOverPanel;
 
     public void Start()
     {
@@ -46,16 +37,13 @@ public class UIManager : MonoBehaviour {
         energySlider.value = bulletGun.energy;
     }
 
-    public void StopGame(BaseAvatar baseAvatar)
-    {
-        if(baseAvatar.GetType() == typeof(PlayerAvatar))
-        {
-            Debug.Log("Dead.");
-        }
-    }
-
     public void TogglePauseMenu()
     {
         pausePanel.SetActive(!pausePanel.activeSelf);
+    }
+
+    public void ToggleGameOverMenu()
+    {
+        gameOverPanel.SetActive(!gameOverPanel.activeSelf);
     }
 }
