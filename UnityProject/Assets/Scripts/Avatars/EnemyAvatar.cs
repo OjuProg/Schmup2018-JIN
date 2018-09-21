@@ -4,6 +4,22 @@ using UnityEngine;
 
 public class EnemyAvatar : BaseAvatar
 {
+    [SerializeField]
+    private EnemyType type;
+
+    public EnemyType Type
+    {
+        get
+        {
+            return this.type;
+        }
+
+        private set
+        {
+            this.type = value;
+        }
+    }
+
     public string PrefabPath
     {
         get;

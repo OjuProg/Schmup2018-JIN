@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class BulletFactory : MonoBehaviour {
 
-    // Bullet Prefabs
-    [SerializeField]
-    private GameObject playerBulletPrefab;
-    [SerializeField]
-    private GameObject enemyBulletPrefab;
-    [SerializeField]
-    private GameObject playerSpiralBulletPrefab;
-
     // Bullet pools
     public List<Pool> pools;
     public Dictionary<string, Queue<GameObject>> poolDictionary;

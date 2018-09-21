@@ -132,6 +132,7 @@ MonoBehaviour:
   energyRegenRate: 0
   damageDealthAtCollision: 10
   energyRegenEfficiencyDuringRestoringProcess: 0
+  type: 1
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3674,6 +3675,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: bulletType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: type
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

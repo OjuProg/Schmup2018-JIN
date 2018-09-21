@@ -187,7 +187,7 @@ MonoBehaviour:
   maximumHealthPoint: 20
   maximumEnergy: 100
   maximumSpeed: 6
-  energyRegenRate: 3
+  energyRegenRate: 5
   damageDealthAtCollision: 50
   energyRegenEfficiencyDuringRestoringProcess: 3
   weaponsNames:
@@ -3718,6 +3718,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: energyRegenRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: energyRegenEfficiencyDuringRestoringProcess
       value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
