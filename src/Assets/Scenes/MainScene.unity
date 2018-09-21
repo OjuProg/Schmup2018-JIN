@@ -936,48 +936,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 900206052}
---- !u!1001 &923346551
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4774006566569828, guid: 19a92d5c10aa19947979cc6d4771cc63, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 3.3776054
-      objectReference: {fileID: 0}
-    - target: {fileID: 4774006566569828, guid: 19a92d5c10aa19947979cc6d4771cc63, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.16241935
-      objectReference: {fileID: 0}
-    - target: {fileID: 4774006566569828, guid: 19a92d5c10aa19947979cc6d4771cc63, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4774006566569828, guid: 19a92d5c10aa19947979cc6d4771cc63, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4774006566569828, guid: 19a92d5c10aa19947979cc6d4771cc63, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4774006566569828, guid: 19a92d5c10aa19947979cc6d4771cc63, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4774006566569828, guid: 19a92d5c10aa19947979cc6d4771cc63, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4774006566569828, guid: 19a92d5c10aa19947979cc6d4771cc63, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 19a92d5c10aa19947979cc6d4771cc63, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1017141459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,9 +1074,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f44cab6ca3d04e4cb4fe95815b1fb2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 1222035272217258, guid: 8bd411c383234524282ed7cfaf57d46d,
+  playerPrefab: {fileID: 1414178334428864, guid: 7fc7c16fa8fd8a74190caa57c01d3276,
     type: 2}
-  enemyPrefab: {fileID: 1291140017574018, guid: 19a92d5c10aa19947979cc6d4771cc63,
+  enemyPrefab: {fileID: 1215479360178692, guid: 2d350137a7bdc0845bf3ddb88f0feb79,
     type: 2}
   uiManager: {fileID: 1029985840}
   pause: 0

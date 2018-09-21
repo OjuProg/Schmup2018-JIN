@@ -14,8 +14,8 @@ public class BulletGun : MonoBehaviour {
     public GameObject spiralBulletPrefab;
 
     // Bullet variables
-    [SerializeField] private int numberOfSpiralBullets;
-    [SerializeField]protected BULLETTYPE currentBulletType;
+    [SerializeField] protected int numberOfSpiralBullets;
+    [SerializeField] protected BULLETTYPE currentBulletType;
     protected Bullet currentBulletData;
     protected float cooldownChrono;
 
@@ -149,20 +149,17 @@ public class BulletGun : MonoBehaviour {
         switch (currentBulletType)
         {
             case BULLETTYPE.SIMPLE:
-                Debug.Log("Diag");
                 currentBulletType = BULLETTYPE.DIAGONALE;
                 currentBulletData = diagonalBulletPrefab.GetComponent<DiagonalBullet>();
                 rotateFirePoint = false;
                 firePoint.transform.rotation = Quaternion.identity;
                 break;
             case BULLETTYPE.DIAGONALE:
-                Debug.Log("Spiral");
                 currentBulletType = BULLETTYPE.SPIRAL;
                 currentBulletData = spiralBulletPrefab.GetComponent<SpiralBullet>();
                 rotateFirePoint = true;
                 break;
             case BULLETTYPE.SPIRAL:
-                Debug.Log("Simple");
                 currentBulletType = BULLETTYPE.SIMPLE;
                 currentBulletData = simpleBulletPrefab.GetComponent<SimpleBullet>();
                 rotateFirePoint = false;

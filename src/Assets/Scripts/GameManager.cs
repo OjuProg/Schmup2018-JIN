@@ -64,7 +64,14 @@ public class GameManager : MonoBehaviour {
 
     public void InvokeEnemy()
     {
-        Instantiate(enemyPrefab, new Vector3(9, Random.Range(-3f, 3f), 0), Quaternion.identity);
+        GameObject enemy = Instantiate(enemyPrefab, new Vector3(9, Random.Range(-3f, 3f), 0), Quaternion.identity);
+        EnemyAvatar enemyAvatar = enemy.GetComponent<EnemyAvatar>();
+        enemyAvatar.maxSpeed = Random.Range(0.5f, 4f);
+        AIBasicBulletGun aiBulletGun = enemy.GetComponent<AIBasicBulletGun>();
+        if(aiBulletGun != null)
+        {
+            aiBulletGun.RandomizeEnemyShootingBehavior(enemyAvatar.maxSpeed);
+        }
     }
 
     public void OnPause()
