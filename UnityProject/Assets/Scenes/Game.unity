@@ -491,13 +491,13 @@ MonoBehaviour:
   pools:
   - tag: PlayerBullets
     prefab: {fileID: 100000, guid: cf8823df26d1b6a439451a77ce1eb72f, type: 2}
-    size: 5
+    size: 1000
   - tag: EnemyBullets
     prefab: {fileID: 100000, guid: 93f0bb3ff54925646a8409e6474fb184, type: 2}
-    size: 5
+    size: 1000
   - tag: PlayerSpiralBullets
     prefab: {fileID: 100000, guid: b7f0cfd9488d71f49b72666275a9c55a, type: 2}
-    size: 5
+    size: 1000
 --- !u!4 &1246476041
 Transform:
   m_ObjectHideFlags: 0
@@ -525,10 +525,10 @@ MonoBehaviour:
   pools:
   - tag: SimpleShotEnemy
     prefab: {fileID: 100000, guid: d712cff2be5eca245b3e961dcc2246b2, type: 2}
-    size: 3
+    size: 5
   - tag: DiagonalShotEnemy
     prefab: {fileID: 100000, guid: b404d4ab71203034d89ac9b5f9d6360c, type: 2}
-    size: 3
+    size: 5
 --- !u!1 &1748442148
 GameObject:
   m_ObjectHideFlags: 0

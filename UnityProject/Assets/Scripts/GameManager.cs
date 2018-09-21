@@ -2,12 +2,23 @@
 
 using System.Collections;
 using System.Collections.Generic;
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Data;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField]
+    private TextAsset levelDescriptionXml;
+
+    private List<LevelDescription> levelDescriptions;
+    private LevelDescription currentLevelDescription;
+
+    private int currentLevelIndex = -1;
+
+    [SerializeField]
+    private Level currentLevel;
+
     [SerializeField]
     private GameObject playerPrefab;
     
@@ -47,6 +58,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        this.levelDescriptions = XmlHelpers.DeserializeDatabaseFromXML<LevelDescription>(this.levelDescriptionXml);
+
         // Spawn the player.
         GameObject player = (GameObject)GameObject.Instantiate(Instance.playerPrefab, new Vector3(0f, 0f), Quaternion.identity);
         this.PlayerAvatar = player.GetComponent<PlayerAvatar>();
@@ -54,11 +67,36 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("Can't retrieve the PlayerAvatar script.");
         }
+
+        currentLevel = new Level();
+        StarNextLevel();
     }
     
+    private void StarNextLevel()
+    {
+        // TODO: Unload current level is existing.
+
+        this.currentLevelIndex++;
+        if(this.currentLevelIndex >= this.levelDescriptions.Count)
+        {
+            // No more level;
+            return;
+        }
+
+        currentLevelDescription = this.levelDescriptions[currentLevelIndex];
+        currentLevel = new Level();
+        currentLevel.Load(currentLevelDescription);
+        // TODO Test if current level is terminated and go to next level.
+    }
+
     private void Update()
     {
-        this.RandomSpawn();
+        // this.RandomSpawn();
+        this.currentLevel.Execute();
+        if(this.currentLevel.IsFinished())
+        {
+            this.StarNextLevel();
+        }
     }
 
     private void RandomSpawn()
