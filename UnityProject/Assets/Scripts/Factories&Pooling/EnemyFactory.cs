@@ -66,6 +66,7 @@ public class EnemyFactory : MonoBehaviour {
         }
 
         EnemyAvatar enemy = gameObject.GetComponent<EnemyAvatar>();
+        enemy.Position = initialPosition;
         return enemy;
     }
 

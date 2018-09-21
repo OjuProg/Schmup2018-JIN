@@ -28,7 +28,7 @@ public class EnemyAvatar : BaseAvatar
     
     protected override void Release()
     {
-        GameObject.Destroy(this.gameObject);
+        EnemyFactory.Instance.Release(this);
     }
 
     protected override void Update()

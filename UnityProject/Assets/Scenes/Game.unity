@@ -488,20 +488,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3a147829da9c374591cf4a861dcf174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBulletPrefab: {fileID: 100000, guid: cf8823df26d1b6a439451a77ce1eb72f, type: 2}
-  enemyBulletPrefab: {fileID: 100000, guid: 93f0bb3ff54925646a8409e6474fb184, type: 2}
-  playerSpiralBulletPrefab: {fileID: 100000, guid: b7f0cfd9488d71f49b72666275a9c55a,
-    type: 2}
   pools:
   - tag: PlayerBullets
     prefab: {fileID: 100000, guid: cf8823df26d1b6a439451a77ce1eb72f, type: 2}
-    size: 150
+    size: 5
   - tag: EnemyBullets
     prefab: {fileID: 100000, guid: 93f0bb3ff54925646a8409e6474fb184, type: 2}
-    size: 1500
+    size: 5
   - tag: PlayerSpiralBullets
     prefab: {fileID: 100000, guid: b7f0cfd9488d71f49b72666275a9c55a, type: 2}
-    size: 1000
+    size: 5
 --- !u!4 &1246476041
 Transform:
   m_ObjectHideFlags: 0
@@ -526,17 +522,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ffe1c3df6cc69641a1427e3cf9fe6d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  simpleShotEnemyPrefab: {fileID: 100000, guid: d712cff2be5eca245b3e961dcc2246b2,
-    type: 2}
-  diagonalShotEnemyPrefab: {fileID: 100000, guid: b404d4ab71203034d89ac9b5f9d6360c,
-    type: 2}
   pools:
   - tag: SimpleShotEnemy
-    prefab: {fileID: 0}
-    size: 0
+    prefab: {fileID: 100000, guid: d712cff2be5eca245b3e961dcc2246b2, type: 2}
+    size: 3
   - tag: DiagonalShotEnemy
-    prefab: {fileID: 0}
-    size: 0
+    prefab: {fileID: 100000, guid: b404d4ab71203034d89ac9b5f9d6360c, type: 2}
+    size: 3
 --- !u!1 &1748442148
 GameObject:
   m_ObjectHideFlags: 0

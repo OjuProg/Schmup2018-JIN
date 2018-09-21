@@ -77,16 +77,20 @@ public class GameManager : MonoBehaviour
         }
 
         // Spawn an enemy.
-        string prefabPath = "Prefabs/Enemy_01";
+        EnemyType enemyType = EnemyType.SimpleShotEnemy;
         if (Random.value < 0.2f)
         {
-            prefabPath = "Prefabs/Enemy_02";
+            enemyType = EnemyType.DiagonalShotEnemy;
         }
 
         float randomY = Random.Range(-4f, 4f);
 
         // Instantiate a new enemy.
         Vector2 position = new Vector3(10f, randomY);
+        EnemyAvatar enemy = EnemyFactory.Instance.GetEnemy(enemyType, position);
+        enemy.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+
+        /*
         GameObject gameObject = null;
 
         GameObject prefab = (GameObject)Resources.Load(prefabPath);
@@ -95,6 +99,7 @@ public class GameManager : MonoBehaviour
         EnemyAvatar enemy = gameObject.GetComponent<EnemyAvatar>();
         enemy.PrefabPath = prefabPath;
         enemy.Position = position;
+        */
 
         this.lastEnemySpawnTime = Time.time;
 
