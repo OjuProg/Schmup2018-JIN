@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 1246476041}
   - component: {fileID: 1246476040}
   m_Layer: 0
-  m_Name: Factory
+  m_Name: Factories
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -491,6 +491,16 @@ MonoBehaviour:
   enemyBulletPrefab: {fileID: 100000, guid: 93f0bb3ff54925646a8409e6474fb184, type: 2}
   playerSpiralBulletPrefab: {fileID: 100000, guid: b7f0cfd9488d71f49b72666275a9c55a,
     type: 2}
+  pools:
+  - tag: PlayerBullets
+    prefab: {fileID: 100000, guid: cf8823df26d1b6a439451a77ce1eb72f, type: 2}
+    size: 150
+  - tag: EnemyBullets
+    prefab: {fileID: 100000, guid: 93f0bb3ff54925646a8409e6474fb184, type: 2}
+    size: 1500
+  - tag: PlayerSpiralBullets
+    prefab: {fileID: 100000, guid: b7f0cfd9488d71f49b72666275a9c55a, type: 2}
+    size: 1000
 --- !u!4 &1246476041
 Transform:
   m_ObjectHideFlags: 0
