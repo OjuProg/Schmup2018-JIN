@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 553e8ba8442016041a91ecdf10ae4f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelDescriptionXml: {fileID: 4900000, guid: 59ae5d8b207cc3b4d93596d62fa8f2d7, type: 3}
+  levelDescriptionXml: {fileID: 4900000, guid: 7433596a446418b4693f2a0f8ae9e400, type: 3}
   playerPrefab: {fileID: 100000, guid: f40fcad1b452c044b9d89d800e28baa2, type: 2}
   rateOfEnemySpawn: 1
   maximumRateOfEnemySpawn: 1.1
@@ -492,13 +492,13 @@ MonoBehaviour:
   pools:
   - tag: PlayerBullets
     prefab: {fileID: 100000, guid: cf8823df26d1b6a439451a77ce1eb72f, type: 2}
-    size: 1000
+    size: 5
   - tag: EnemyBullets
     prefab: {fileID: 100000, guid: 93f0bb3ff54925646a8409e6474fb184, type: 2}
-    size: 1000
+    size: 5
   - tag: PlayerSpiralBullets
     prefab: {fileID: 100000, guid: b7f0cfd9488d71f49b72666275a9c55a, type: 2}
-    size: 1000
+    size: 5
 --- !u!4 &1246476041
 Transform:
   m_ObjectHideFlags: 0
@@ -526,10 +526,10 @@ MonoBehaviour:
   pools:
   - tag: SimpleShotEnemy
     prefab: {fileID: 100000, guid: d712cff2be5eca245b3e961dcc2246b2, type: 2}
-    size: 5
+    size: 3
   - tag: DiagonalShotEnemy
     prefab: {fileID: 100000, guid: b404d4ab71203034d89ac9b5f9d6360c, type: 2}
-    size: 5
+    size: 3
 --- !u!1 &1748442148
 GameObject:
   m_ObjectHideFlags: 0

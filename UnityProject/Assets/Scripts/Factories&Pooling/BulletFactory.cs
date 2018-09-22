@@ -78,4 +78,26 @@ public class BulletFactory : MonoBehaviour {
     {
         bullet.gameObject.SetActive(false);
     }
+
+    public void ReleaseAllObjectsInPool()
+    {
+        GameObject gameObject;
+
+        foreach (Pool pool in pools)
+        {
+            if (!poolDictionary.ContainsKey(pool.tag))
+            {
+                Debug.LogWarning("Pool with tag " + tag + " doesn't exist");
+                continue;
+            }
+
+            Queue<GameObject> queue = poolDictionary[pool.tag];
+            for (int i = 0; i < pool.size; i++)
+            {
+                gameObject = queue.Dequeue();
+                gameObject.SetActive(false);
+                queue.Enqueue(gameObject);
+            }
+        }
+    }
 }

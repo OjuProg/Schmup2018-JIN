@@ -1,5 +1,6 @@
 ﻿// <copyright file="GameManager.cs" company="AAllard">Copyright AAllard. All rights reserved.</copyright>
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,6 +46,8 @@ public class GameManager : MonoBehaviour
         private set;
     }
 
+    public event EventHandler<LevelChangedArgs> OnLevelChanged;
+
     private void Awake()
     {
         if (Instance != null)
@@ -74,19 +77,21 @@ public class GameManager : MonoBehaviour
     
     private void StarNextLevel()
     {
-        // TODO: Unload current level is existing.
+        if(currentLevel != null)
+        {
+            currentLevel.Unload();
+        }
 
         this.currentLevelIndex++;
+
         if(this.currentLevelIndex >= this.levelDescriptions.Count)
         {
-            Debug.Log("Game over");
             return;
         }
 
         currentLevelDescription = this.levelDescriptions[currentLevelIndex];
         currentLevel = new Level();
         currentLevel.Load(currentLevelDescription);
-        // TODO Test if current level is terminated and go to next level.
     }
 
     private void Update()
@@ -116,28 +121,17 @@ public class GameManager : MonoBehaviour
 
         // Spawn an enemy.
         EnemyType enemyType = EnemyType.SimpleShotEnemy;
-        if (Random.value < 0.2f)
+        if (UnityEngine.Random.value < 0.2f)
         {
             enemyType = EnemyType.DiagonalShotEnemy;
         }
 
-        float randomY = Random.Range(-4f, 4f);
+        float randomY = UnityEngine.Random.Range(-4f, 4f);
 
         // Instantiate a new enemy.
         Vector2 position = new Vector3(10f, randomY);
         EnemyAvatar enemy = EnemyFactory.Instance.GetEnemy(enemyType, position);
         enemy.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
-
-        /*
-        GameObject gameObject = null;
-
-        GameObject prefab = (GameObject)Resources.Load(prefabPath);
-        gameObject = (GameObject)GameObject.Instantiate(prefab, position, Quaternion.Euler(0f, 0f, 180f));
-
-        EnemyAvatar enemy = gameObject.GetComponent<EnemyAvatar>();
-        enemy.PrefabPath = prefabPath;
-        enemy.Position = position;
-        */
 
         this.lastEnemySpawnTime = Time.time;
 

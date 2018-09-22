@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyFactory : MonoBehaviour {
 
-    // Bullet pools
+    // Enemy pools
     public List<Pool> pools;
     public Dictionary<string, Queue<GameObject>> poolDictionary;
 
@@ -73,5 +73,27 @@ public class EnemyFactory : MonoBehaviour {
     public void Release(EnemyAvatar enemy)
     {
         enemy.gameObject.SetActive(false);
+    }
+
+    public void ReleaseAllObjectsInPool()
+    {
+        GameObject gameObject;
+
+        foreach(Pool pool in pools)
+        {
+            if (!poolDictionary.ContainsKey(pool.tag))
+            {
+                Debug.LogWarning("Pool with tag " + tag + " doesn't exist");
+                continue;
+            }
+
+            Queue<GameObject> queue = poolDictionary[pool.tag];
+            for(int i = 0; i < pool.size; i++)
+            {
+                gameObject = queue.Dequeue();
+                gameObject.SetActive(false);
+                queue.Enqueue(gameObject);
+            }
+        }
     }
 }

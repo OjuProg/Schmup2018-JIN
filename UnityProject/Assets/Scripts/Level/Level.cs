@@ -27,7 +27,14 @@ public class Level {
         }
     }
 
-
+    public void Unload()
+    {
+        EnemyFactory.Instance.ReleaseAllObjectsInPool();
+        BulletFactory.Instance.ReleaseAllObjectsInPool();
+        this.description = null;
+        this.enemiesToSpawn = null;
+    }
+    
     public void Execute()
     {
         levelTimer = Time.time - this.startTime;
@@ -46,7 +53,6 @@ public class Level {
             }
 
             // Spawn
-            Debug.Log("Enemy Spawned!");
             EnemyFactory.Instance.GetEnemy(enemyDescription.Type, enemyDescription.SpawnPosition);
             this.enemyStateArray[index] = EnemyState.Spawned;
         }
@@ -57,16 +63,3 @@ public class Level {
         return levelTimer > description.Duration;
     }
 }
-
-/*
-        for(int index = 0; index < this.enemiesToSpawn.Count; index++)
-        {
-            EnemyDescription enemyDescription = this.enemiesToSpawn[index];
-            if(this.enemiesToSpawn[index].SpawnDate > levelTimer)
-            {
-               
-                this.enemiesToSpawn.RemoveAt(index);
-                index--;
-            }
-        }
-*/
