@@ -334,6 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 553e8ba8442016041a91ecdf10ae4f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelDescriptionXml: {fileID: 4900000, guid: 59ae5d8b207cc3b4d93596d62fa8f2d7, type: 3}
   playerPrefab: {fileID: 100000, guid: f40fcad1b452c044b9d89d800e28baa2, type: 2}
   rateOfEnemySpawn: 1
   maximumRateOfEnemySpawn: 1.1

@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
         this.currentLevelIndex++;
         if(this.currentLevelIndex >= this.levelDescriptions.Count)
         {
-            // No more level;
+            Debug.Log("Game over");
             return;
         }
 
