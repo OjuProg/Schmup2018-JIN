@@ -9,6 +9,8 @@ using Data;
 
 public class GameManager : MonoBehaviour
 {
+    private enum GameState { Play, Pause, GameOver };
+
     [SerializeField]
     private TextAsset levelDescriptionXml;
 
@@ -16,6 +18,8 @@ public class GameManager : MonoBehaviour
     private LevelDescription currentLevelDescription;
 
     private int currentLevelIndex = -1;
+
+    private GameState gameState;
 
     [SerializeField]
     private Level currentLevel;
@@ -61,6 +65,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        gameState = GameState.Play;
+
         this.levelDescriptions = XmlHelpers.DeserializeDatabaseFromXML<LevelDescription>(this.levelDescriptionXml);
 
         // Spawn the player.
@@ -86,6 +92,7 @@ public class GameManager : MonoBehaviour
 
         if(this.currentLevelIndex >= this.levelDescriptions.Count)
         {
+            gameState = GameState.GameOver;
             return;
         }
 
@@ -97,10 +104,13 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         // this.RandomSpawn();
-        this.currentLevel.Execute();
-        if(this.currentLevel.IsFinished())
+        if(gameState == GameState.Play)
         {
-            this.StarNextLevel();
+            this.currentLevel.Execute();
+            if (this.currentLevel.IsFinished())
+            {
+                this.StarNextLevel();
+            }
         }
     }
 
