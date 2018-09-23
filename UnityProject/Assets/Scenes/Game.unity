@@ -1079,7 +1079,7 @@ Transform:
   m_GameObject: {fileID: 738304698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.5183768, y: 0.6701603, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
   m_Children:
   - {fileID: 2006358782}
   - {fileID: 442815345}
@@ -1141,7 +1141,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guiManager: {fileID: 1763433427}
   levelDescriptionXml: {fileID: 4900000, guid: 7433596a446418b4693f2a0f8ae9e400, type: 3}
-  playerPrefab: {fileID: 100000, guid: f40fcad1b452c044b9d89d800e28baa2, type: 2}
+  playerPrefab: {fileID: 1621676269039768, guid: 8da2913fd4800ca4ebdc2f5cf676e1df,
+    type: 2}
   rateOfEnemySpawn: 1
   maximumRateOfEnemySpawn: 1.1
   rateOfEnemySpawnIncreaseStep: 0.002
@@ -1483,13 +1484,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1094236192}
-  m_LocalRotation: {x: 0.656059, y: 0, z: 0, w: 0.75470966}
-  m_LocalPosition: {x: 3.48, y: 2.11, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.44, y: 3, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738304699}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 82, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1094236194
 Light:
   m_ObjectHideFlags: 0
@@ -1498,11 +1499,11 @@ Light:
   m_GameObject: {fileID: 1094236192}
   m_Enabled: 1
   serializedVersion: 8
-  m_Type: 1
+  m_Type: 0
   m_Color: {r: 0.3633218, g: 0.4395359, b: 0.5147059, a: 1}
-  m_Intensity: 5
-  m_Range: 600
-  m_SpotAngle: 30
+  m_Intensity: 8
+  m_Range: 15
+  m_SpotAngle: 179
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -1521,7 +1522,7 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -1626,13 +1627,13 @@ MonoBehaviour:
   pools:
   - tag: PlayerBullets
     prefab: {fileID: 100000, guid: cf8823df26d1b6a439451a77ce1eb72f, type: 2}
-    size: 5
+    size: 300
   - tag: EnemyBullets
     prefab: {fileID: 100000, guid: 93f0bb3ff54925646a8409e6474fb184, type: 2}
-    size: 5
+    size: 200
   - tag: PlayerSpiralBullets
     prefab: {fileID: 100000, guid: b7f0cfd9488d71f49b72666275a9c55a, type: 2}
-    size: 5
+    size: 300
 --- !u!4 &1246476041
 Transform:
   m_ObjectHideFlags: 0
@@ -1659,10 +1660,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools:
   - tag: SimpleShotEnemy
-    prefab: {fileID: 100000, guid: d712cff2be5eca245b3e961dcc2246b2, type: 2}
+    prefab: {fileID: 1690260434980802, guid: 885fdf20925307249b9d6c44e38c414b, type: 2}
     size: 3
   - tag: DiagonalShotEnemy
-    prefab: {fileID: 100000, guid: b404d4ab71203034d89ac9b5f9d6360c, type: 2}
+    prefab: {fileID: 1755011968229964, guid: 29ee8c81c23049e40bb570889dc12135, type: 2}
     size: 3
 --- !u!1 &1393490295
 GameObject:
@@ -2038,7 +2039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1763433423
 MonoBehaviour:
   m_ObjectHideFlags: 0

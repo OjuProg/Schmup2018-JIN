@@ -180,7 +180,7 @@ MonoBehaviour:
   bulletSpeed: 8
   bulletDamage: 2
   bulletType: 1
-  drawCanonsGizmo: 1
+  drawCanonsGizmo: 0
   canonDescriptions:
   - BulletSpawnOffsetPosition: {x: 0.6, y: 0}
     BulletSpawnOffsetAngle: 0
@@ -3680,6 +3680,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: type
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: drawCanonsGizmo
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
