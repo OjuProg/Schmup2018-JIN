@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private GameObject playerPrefab;
+    private bool playerHasDied;
     
     [SerializeField]
     private float rateOfEnemySpawn = 0.2f;
@@ -99,7 +100,7 @@ public class GameManager : MonoBehaviour
         guiManager.ToggleGameOverMenu();
 
         gameState = GameState.GameOver;
-        Time.timeScale = 0;
+        // Time.timeScale = 0;
     }
 
     public void SetTimeToNormal()
@@ -109,8 +110,9 @@ public class GameManager : MonoBehaviour
 
     private void OnAvatarDeath(BaseAvatar baseAvatar)
     {
-        if (baseAvatar.GetType() == typeof(PlayerAvatar))
+        if (baseAvatar.GetType() == typeof(PlayerAvatar) && !playerHasDied)
         {
+            playerHasDied = true;
             OnGameOver();
         }
     }
@@ -140,6 +142,7 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameState.Play;
         Time.timeScale = 1;
+        playerHasDied = false;
 
         this.levelDescriptions = XmlHelpers.DeserializeDatabaseFromXML<LevelDescription>(this.levelDescriptionXml);
 

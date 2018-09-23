@@ -270,7 +270,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 52062880}
-        m_MethodName: LoadStoryMode
+        m_MethodName: LoadEndlessMode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1203,8 +1203,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guiManager: {fileID: 1763433427}
-  levelDescriptionXml: {fileID: 4900000, guid: 59ae5d8b207cc3b4d93596d62fa8f2d7, type: 3}
-  gameType: 0
+  levelDescriptionXml: {fileID: 4900000, guid: 7433596a446418b4693f2a0f8ae9e400, type: 3}
+  gameType: 1
   playerPrefab: {fileID: 1621676269039768, guid: 8da2913fd4800ca4ebdc2f5cf676e1df,
     type: 2}
   rateOfEnemySpawn: 1

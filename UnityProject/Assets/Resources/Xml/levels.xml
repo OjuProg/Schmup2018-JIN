@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-    <LevelDescription Name="First level" Duration="20">
+    <LevelDescription Name="First level" Duration="50">
         <Scene>01_FirstLevel</Scene>
 
         <!-- First wave -->
@@ -153,9 +153,137 @@
             <Type>SimpleShotEnemy</Type>
         </EnemyDescription>
 
-		 <!-- Third Wave --> 
+
+        <!-- Third Wave --> 
+        <EnemyDescription>
+            <SpawnDate>15</SpawnDate>
+            <SpawnPosition>
+                <x>10</x>
+                <y>-4</y>
+            </SpawnPosition>
+            <Type>SimpleShotEnemy</Type>
+        </EnemyDescription>
+        <EnemyDescription>
+            <SpawnDate>15</SpawnDate>
+            <SpawnPosition>
+                <x>9</x>
+                <y>-3.5</y>
+            </SpawnPosition>
+            <Type>SimpleShotEnemy</Type>
+        </EnemyDescription>
          <EnemyDescription>
             <SpawnDate>15</SpawnDate>
+            <SpawnPosition>
+                <x>10</x>
+                <y>-3</y>
+            </SpawnPosition>
+            <Type>SimpleShotEnemy</Type>
+        </EnemyDescription>
+         <EnemyDescription>
+            <SpawnDate>15</SpawnDate>
+            <SpawnPosition>
+                <x>11</x>
+                <y>-2</y>
+            </SpawnPosition>
+            <Type>SimpleShotEnemy</Type>
+        </EnemyDescription>
+        <EnemyDescription>
+            <SpawnDate>15</SpawnDate>
+            <SpawnPosition>
+                <x>12</x>
+                <y>-1.5</y>
+            </SpawnPosition>
+            <Type>SimpleShotEnemy</Type>
+        </EnemyDescription>
+         <EnemyDescription>
+            <SpawnDate>15</SpawnDate>
+            <SpawnPosition>
+                <x>11</x>
+                <y>-1</y>
+            </SpawnPosition>
+            <Type>SimpleShotEnemy</Type>
+        </EnemyDescription>
+
+
+         <EnemyDescription>
+            <SpawnDate>15</SpawnDate>
+            <SpawnPosition>
+                <x>14</x>
+                <y>-0.5</y>
+            </SpawnPosition>
+            <Type>SimpleShotEnemy</Type>
+        </EnemyDescription>
+        <EnemyDescription>
+            <SpawnDate>15</SpawnDate>
+            <SpawnPosition>
+                <x>15</x>
+                <y>0</y>
+            </SpawnPosition>
+            <Type>SimpleShotEnemy</Type>
+        </EnemyDescription>
+         <EnemyDescription>
+            <SpawnDate>15</SpawnDate>
+            <SpawnPosition>
+                <x>14</x>
+                <y>0.5</y>
+            </SpawnPosition>
+            <Type>SimpleShotEnemy</Type>
+        </EnemyDescription>
+
+
+
+        <EnemyDescription>
+            <SpawnDate>15</SpawnDate>
+            <SpawnPosition>
+                <x>10</x>
+                <y>4</y>
+            </SpawnPosition>
+            <Type>SimpleShotEnemy</Type>
+        </EnemyDescription>
+        <EnemyDescription>
+            <SpawnDate>15</SpawnDate>
+            <SpawnPosition>
+                <x>9</x>
+                <y>3.5</y>
+            </SpawnPosition>
+            <Type>SimpleShotEnemy</Type>
+        </EnemyDescription>
+         <EnemyDescription>
+            <SpawnDate>15</SpawnDate>
+            <SpawnPosition>
+                <x>10</x>
+                <y>3</y>
+            </SpawnPosition>
+            <Type>SimpleShotEnemy</Type>
+        </EnemyDescription>
+         <EnemyDescription>
+            <SpawnDate>15</SpawnDate>
+            <SpawnPosition>
+                <x>11</x>
+                <y>2</y>
+            </SpawnPosition>
+            <Type>SimpleShotEnemy</Type>
+        </EnemyDescription>
+        <EnemyDescription>
+            <SpawnDate>15</SpawnDate>
+            <SpawnPosition>
+                <x>12</x>
+                <y>1.5</y>
+            </SpawnPosition>
+            <Type>SimpleShotEnemy</Type>
+        </EnemyDescription>
+         <EnemyDescription>
+            <SpawnDate>15</SpawnDate>
+            <SpawnPosition>
+                <x>11</x>
+                <y>1</y>
+            </SpawnPosition>
+            <Type>SimpleShotEnemy</Type>
+        </EnemyDescription>
+
+        <!-- Fourht Wave --> 
+         <EnemyDescription>
+            <SpawnDate>30</SpawnDate>
             <SpawnPosition>
                 <x>12</x>
                 <y>3</y>
@@ -164,7 +292,7 @@
         </EnemyDescription>
 
          <EnemyDescription>
-            <SpawnDate>15</SpawnDate>
+            <SpawnDate>30</SpawnDate>
             <SpawnPosition>
                 <x>14</x>
                 <y>0</y>
@@ -173,14 +301,204 @@
         </EnemyDescription>
 
          <EnemyDescription>
-            <SpawnDate>15</SpawnDate>
+            <SpawnDate>30</SpawnDate>
             <SpawnPosition>
                 <x>12</x>
                 <y>-3</y>
             </SpawnPosition>
             <Type>DiagonalShotEnemy</Type>
-</EnemyDescription>
-		
+        </EnemyDescription>
+
+        <!-- Fifth wave -->
+         <EnemyDescription>
+            <SpawnDate>40</SpawnDate>
+            <SpawnPosition>
+                <x>12</x>
+                <y>-4</y>
+            </SpawnPosition>
+            <Type>DiagonalShotEnemy</Type>
+        </EnemyDescription>
+
+         <EnemyDescription>
+            <SpawnDate>40</SpawnDate>
+            <SpawnPosition>
+                <x>12</x>
+                <y>-3</y>
+            </SpawnPosition>
+            <Type>DiagonalShotEnemy</Type>
+        </EnemyDescription>
+
+        <EnemyDescription>
+            <SpawnDate>40</SpawnDate>
+            <SpawnPosition>
+                <x>12</x>
+                <y>-2</y>
+            </SpawnPosition>
+            <Type>DiagonalShotEnemy</Type>
+        </EnemyDescription>
+
+        <EnemyDescription>
+            <SpawnDate>40</SpawnDate>
+            <SpawnPosition>
+                <x>12</x>
+                <y>-1</y>
+            </SpawnPosition>
+            <Type>DiagonalShotEnemy</Type>
+        </EnemyDescription>
+
+        <EnemyDescription>
+            <SpawnDate>40</SpawnDate>
+            <SpawnPosition>
+                <x>12</x>
+                <y>0</y>
+            </SpawnPosition>
+            <Type>DiagonalShotEnemy</Type>
+        </EnemyDescription>
+
+     	<EnemyDescription>
+            <SpawnDate>40</SpawnDate>
+            <SpawnPosition>
+                <x>12</x>
+                <y>4</y>
+            </SpawnPosition>
+            <Type>DiagonalShotEnemy</Type>
+        </EnemyDescription>
+
+         <EnemyDescription>
+            <SpawnDate>40</SpawnDate>
+            <SpawnPosition>
+                <x>12</x>
+                <y>3</y>
+            </SpawnPosition>
+            <Type>DiagonalShotEnemy</Type>
+        </EnemyDescription>
+
+        <EnemyDescription>
+            <SpawnDate>40</SpawnDate>
+            <SpawnPosition>
+                <x>12</x>
+                <y>2</y>
+            </SpawnPosition>
+            <Type>DiagonalShotEnemy</Type>
+        </EnemyDescription>
+
+        <EnemyDescription>
+            <SpawnDate>40</SpawnDate>
+            <SpawnPosition>
+                <x>12</x>
+                <y>1</y>
+            </SpawnPosition>
+            <Type>DiagonalShotEnemy</Type>
+        </EnemyDescription>
+
   </LevelDescription>
-    
+
+    <LevelDescription Name="Second level" Duration="40">
+        <Scene>02_FinalLevel</Scene>
+
+        <!-- Boss -->
+        <EnemyDescription>
+            <SpawnDate>3</SpawnDate>
+            <SpawnPosition>
+                <x>10</x>
+                <y>0</y>
+            </SpawnPosition>
+            <PrefabPath>Prefabs/Boss</PrefabPath>
+        </EnemyDescription>
+
+        <!-- first side kicks -->
+        <EnemyDescription>
+            <SpawnDate>10</SpawnDate>
+            <SpawnPosition>
+                <x>10</x>
+                <y>-4</y>
+            </SpawnPosition>
+            <Type>DiagonalShotEnemy</Type>
+        </EnemyDescription>
+
+        <EnemyDescription>
+            <SpawnDate>10</SpawnDate>
+            <SpawnPosition>
+                <x>10</x>
+                <y>-2</y>
+            </SpawnPosition>
+            <Type>DiagonalShotEnemy</Type>
+        </EnemyDescription>
+
+    	<EnemyDescription>
+            <SpawnDate>10</SpawnDate>
+            <SpawnPosition>
+                <x>10</x>
+                <y>4</y>
+            </SpawnPosition>
+            <Type>DiagonalShotEnemy</Type>
+        </EnemyDescription>
+
+        <EnemyDescription>
+            <SpawnDate>10</SpawnDate>
+            <SpawnPosition>
+                <x>10</x>
+                <y>2</y>
+            </SpawnPosition>
+            <Type>DiagonalShotEnemy</Type>
+        </EnemyDescription>
+
+
+        <!-- second side kicks -->
+        <EnemyDescription>
+      	  <SpawnDate>20</SpawnDate>
+            <SpawnPosition>
+                <x>12</x>
+                <y>3</y>
+            </SpawnPosition>
+            <Type>DiagonalShotEnemy</Type>
+        </EnemyDescription>
+
+        <EnemyDescription>
+      	  <SpawnDate>20</SpawnDate>
+            <SpawnPosition>
+                <x>10</x>
+                <y>4</y>
+            </SpawnPosition>
+            <Type>SimpleShotEnemy</Type>
+        </EnemyDescription>
+
+      	<EnemyDescription>
+      	  <SpawnDate>20</SpawnDate>
+            <SpawnPosition>
+                <x>10</x>
+                <y>2</y>
+            </SpawnPosition>
+            <Type>SimpleShotEnemy</Type>
+        </EnemyDescription>
+
+         <EnemyDescription>
+      	  <SpawnDate>20</SpawnDate>
+            <SpawnPosition>
+                <x>12</x>
+                <y>3</y>
+            </SpawnPosition>
+            <Type>DiagonalShotEnemy</Type>
+        </EnemyDescription>
+
+        <EnemyDescription>
+      	  <SpawnDate>20</SpawnDate>
+            <SpawnPosition>
+                <x>10</x>
+                <y>-4</y>
+            </SpawnPosition>
+            <Type>SimpleShotEnemy</Type>
+        </EnemyDescription>
+
+      	<EnemyDescription>
+      	  <SpawnDate>20</SpawnDate>
+            <SpawnPosition>
+                <x>10</x>
+                <y>-2</y>
+            </SpawnPosition>
+            <Type>SimpleShotEnemy</Type>
+        </EnemyDescription>
+
+
+    </LevelDescription>
 </Datatable>
