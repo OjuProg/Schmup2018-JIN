@@ -102,6 +102,14 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    private void OnAvatarDeath(BaseAvatar baseAvatar)
+    {
+        if (baseAvatar.GetType() == typeof(PlayerAvatar))
+        {
+            OnGameOver();
+        }
+    }
+
     private void Awake()
     {
         if (Instance != null)
@@ -113,9 +121,20 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+    public void OnEnable()
+    {
+        BaseAvatar.OnDeath += OnAvatarDeath;
+    }
+
+    public void OnDisable()
+    {
+        BaseAvatar.OnDeath -= OnAvatarDeath;
+    }
+
     private void Start()
     {
         gameState = GameState.Play;
+        Time.timeScale = 1;
 
         this.levelDescriptions = XmlHelpers.DeserializeDatabaseFromXML<LevelDescription>(this.levelDescriptionXml);
 

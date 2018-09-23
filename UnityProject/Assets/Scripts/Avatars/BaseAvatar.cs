@@ -33,6 +33,9 @@ public class BaseAvatar : MonoBehaviour
 
     public event EventHandler<DamageTakenEventArgs> OnDamageTaken;
 
+    public delegate void DeathAction(BaseAvatar baseAvatar);
+    public static event DeathAction OnDeath;
+
     //// Statistics.
     public float HealthPoint
     {
@@ -169,6 +172,11 @@ public class BaseAvatar : MonoBehaviour
 
     protected virtual void Die()
     {
+        if(OnDeath != null)
+        {
+            OnDeath(this);
+        }
+
         this.Invoke("Release", 0.3f);
     }
 
