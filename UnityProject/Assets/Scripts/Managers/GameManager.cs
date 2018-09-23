@@ -10,6 +10,7 @@ using Data;
 public class GameManager : MonoBehaviour
 {
     private enum GameState { Play, Pause, GameOver };
+    public enum GameType { Levels, Endless };
 
     [SerializeField]
     private GUIManager guiManager;
@@ -23,6 +24,25 @@ public class GameManager : MonoBehaviour
     private int currentLevelIndex = -1;
 
     private GameState gameState;
+
+    [SerializeField]
+    private GameType gameType;
+
+    public GameType CurrentGameType
+    {
+        get
+        {
+            return gameType;
+        }
+
+        set
+        {
+            if(value.GetType() == typeof(GameType))
+            {
+                this.gameType = value;
+            }
+        }
+    }
 
     [SerializeField]
     private Level currentLevel;
@@ -106,9 +126,19 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("Can't retrieve the PlayerAvatar script.");
         }
-
-        currentLevel = new Level();
-        StarNextLevel();
+        
+        switch (gameType)
+        {
+            case GameType.Levels:
+                currentLevel = new Level();
+                StarNextLevel();
+                break;
+            case GameType.Endless:
+                break;
+            default:
+                Debug.LogWarning("Unknown game type." + gameType.ToString());
+                break;
+        }
     }
     
     private void StarNextLevel()
@@ -133,14 +163,25 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        // this.RandomSpawn();
-        if(gameState == GameState.Play)
+        switch(gameType)
         {
-            this.currentLevel.Execute();
-            if (this.currentLevel.IsFinished())
-            {
-                this.StarNextLevel();
-            }
+            case GameType.Levels:
+                if (gameState == GameState.Play)
+                {
+                    this.currentLevel.Execute();
+                    if (this.currentLevel.IsFinished())
+                    {
+                        this.StarNextLevel();
+                    }
+                }
+                break;
+
+            case GameType.Endless:
+                this.RandomSpawn();
+                break;
+            default:
+                Debug.LogWarning("Unknown game type." + gameType.ToString());
+                break;
         }
     }
 
