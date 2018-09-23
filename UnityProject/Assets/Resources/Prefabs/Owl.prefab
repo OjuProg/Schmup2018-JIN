@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114635070370063322}
   - component: {fileID: 114632684654091420}
   - component: {fileID: 114495944291097580}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Owl
   m_TagString: Untagged
   m_Icon: {fileID: 0}

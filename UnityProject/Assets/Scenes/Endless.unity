@@ -1693,10 +1693,10 @@ MonoBehaviour:
   pools:
   - tag: SimpleShotEnemy
     prefab: {fileID: 1690260434980802, guid: 885fdf20925307249b9d6c44e38c414b, type: 2}
-    size: 3
+    size: 50
   - tag: DiagonalShotEnemy
     prefab: {fileID: 1755011968229964, guid: 29ee8c81c23049e40bb570889dc12135, type: 2}
-    size: 3
+    size: 25
 --- !u!1 &1393490295
 GameObject:
   m_ObjectHideFlags: 0
