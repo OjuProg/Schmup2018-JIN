@@ -6,6 +6,12 @@ using UnityEngine.UI;
 public class GUIManager : MonoBehaviour
 {
     [SerializeField]
+    private GameObject pausePanel;
+
+    [SerializeField]
+    private GameObject gameOverPanel;
+
+    [SerializeField]
     private Image healthBar;
 
     [SerializeField]
@@ -40,6 +46,16 @@ public class GUIManager : MonoBehaviour
 
     private void OnDisable()
     {
+    }
+
+    public void TogglePauseMenu()
+    {
+        pausePanel.SetActive(!pausePanel.activeSelf);
+    }
+
+    public void ToggleGameOverMenu()
+    {
+        gameOverPanel.SetActive(!gameOverPanel.activeSelf);
     }
 
     private void Update()

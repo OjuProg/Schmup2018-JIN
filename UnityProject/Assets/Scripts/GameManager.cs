@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     private enum GameState { Play, Pause, GameOver };
 
     [SerializeField]
+    private GUIManager guiManager;
+
+    [SerializeField]
     private TextAsset levelDescriptionXml;
 
     private List<LevelDescription> levelDescriptions;
@@ -50,7 +53,34 @@ public class GameManager : MonoBehaviour
         private set;
     }
 
-    public event EventHandler<LevelChangedArgs> OnLevelChanged;
+    public void OnPause()
+    {
+        guiManager.TogglePauseMenu();
+        gameState = (gameState == GameState.Pause) ? GameState.Play : GameState.Pause;
+
+        switch (gameState)
+        {
+            case GameState.Play:
+                Time.timeScale = 1;
+                break;
+            case GameState.Pause:
+                Time.timeScale = 0;
+                break;
+            case GameState.GameOver:
+                break;
+            default:
+                Debug.LogWarning("Gamestate type." + gameState.ToString() + " not registered.");
+                break;
+        }
+    }
+
+    public void OnGameOver()
+    {
+        guiManager.ToggleGameOverMenu();
+
+        gameState = GameState.GameOver;
+        Time.timeScale = 0;
+    }
 
     private void Awake()
     {
@@ -92,7 +122,7 @@ public class GameManager : MonoBehaviour
 
         if(this.currentLevelIndex >= this.levelDescriptions.Count)
         {
-            gameState = GameState.GameOver;
+            OnGameOver();
             return;
         }
 
@@ -148,4 +178,5 @@ public class GameManager : MonoBehaviour
         // Up the difficulty.
         this.rateOfEnemySpawn += this.rateOfEnemySpawn > this.maximumRateOfEnemySpawn ? 0f : this.rateOfEnemySpawnIncreaseStep;
     }
+
 }

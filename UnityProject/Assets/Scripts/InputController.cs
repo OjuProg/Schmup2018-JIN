@@ -66,5 +66,13 @@ public class InputController : MonoBehaviour
                 this.playerAvatar.SwitchToNextWeapon();
             }
         }
+
+        if (GameManager.Instance != null)
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                GameManager.Instance.OnPause();
+            }
+        }
     }
 }
