@@ -152,12 +152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b09e41889c1a37458accf77ac71ced1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maximumHealthPoint: 20
+  maximumHealthPoint: 60
   maximumEnergy: 100
   maximumSpeed: 6
   energyRegenRate: 6
   damageDealthAtCollision: 50
-  energyRegenEfficiencyDuringRestoringProcess: 3
+  energyRegenEfficiencyDuringRestoringProcess: 4
   weaponsNames:
   - SimpleGun
   - DoubleGun
@@ -175,10 +175,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: DoubleGun
-  energyConsumedPerBullet: 10
-  rateOfFire: 6
+  energyConsumedPerBullet: 4
+  rateOfFire: 8
   bulletSpeed: 8
-  bulletDamage: 10
+  bulletDamage: 5
   bulletType: 0
   drawCanonsGizmo: 0
   canonDescriptions:
@@ -198,10 +198,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: SimpleGun
-  energyConsumedPerBullet: 5
-  rateOfFire: 2
-  bulletSpeed: 8
-  bulletDamage: 20
+  energyConsumedPerBullet: 3
+  rateOfFire: 5
+  bulletSpeed: 7
+  bulletDamage: 10
   bulletType: 0
   drawCanonsGizmo: 1
   canonDescriptions:
@@ -219,10 +219,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: SpiralGun
-  energyConsumedPerBullet: 10
-  rateOfFire: 10
-  bulletSpeed: 2
-  bulletDamage: 5
+  energyConsumedPerBullet: 6
+  rateOfFire: 7
+  bulletSpeed: 3
+  bulletDamage: 4
   bulletType: 2
   drawCanonsGizmo: 0
   canonDescriptions:

@@ -1208,8 +1208,8 @@ MonoBehaviour:
   playerPrefab: {fileID: 1621676269039768, guid: 8da2913fd4800ca4ebdc2f5cf676e1df,
     type: 2}
   rateOfEnemySpawn: 1
-  maximumRateOfEnemySpawn: 1.1
-  rateOfEnemySpawnIncreaseStep: 0.002
+  maximumRateOfEnemySpawn: 3
+  rateOfEnemySpawnIncreaseStep: 0.01
 --- !u!4 &768236058
 Transform:
   m_ObjectHideFlags: 0

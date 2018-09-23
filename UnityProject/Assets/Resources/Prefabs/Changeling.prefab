@@ -122,9 +122,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: 
   energyConsumedPerBullet: 0
-  rateOfFire: 6
-  bulletSpeed: 8
-  bulletDamage: 2
+  rateOfFire: 3
+  bulletSpeed: 6
+  bulletDamage: 3
   bulletType: 1
   drawCanonsGizmo: 1
   canonDescriptions:
