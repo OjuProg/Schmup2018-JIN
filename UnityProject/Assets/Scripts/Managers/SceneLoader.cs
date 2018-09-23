@@ -3,23 +3,51 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour {
 
+    public Animator fadeAnimator;
+
+    private int levelToLoad;
+
+    private void ApplyFadeEffect()
+    {
+        if (fadeAnimator != null)
+        {
+            fadeAnimator.SetTrigger("FadeOut");
+        }
+    }
+
+    private void OnFadeComplete()
+    {
+        if(levelToLoad != -1)
+        {
+            SceneManager.LoadScene(levelToLoad);
+        }
+        else
+        {
+            Application.Quit();
+        }
+    }
+
     public void LoadStoryMode()
     {
-        SceneManager.LoadScene("Game");
+        levelToLoad = 1;
+        ApplyFadeEffect();
     }
 
     public void LoadEndlessMode()
     {
-        SceneManager.LoadScene("Endless");
+        levelToLoad = 2;
+        ApplyFadeEffect();
     }
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        levelToLoad = 0;
+        ApplyFadeEffect();
     }
 
     public void QuitApplication()
     {
-        Application.Quit();
+        levelToLoad = -1;
+        ApplyFadeEffect();
     }
 }

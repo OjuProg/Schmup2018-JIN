@@ -102,6 +102,11 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    public void SetTimeToNormal()
+    {
+        Time.timeScale = 1;
+    }
+
     private void OnAvatarDeath(BaseAvatar baseAvatar)
     {
         if (baseAvatar.GetType() == typeof(PlayerAvatar))

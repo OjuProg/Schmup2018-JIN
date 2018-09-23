@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: f9fa2a2a0511f914fb5f65efecb9dbf5,
+    type: 2}
   m_UseShadowmask: 0
 --- !u!196 &5
 NavMeshSettings:
@@ -257,7 +258,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 837699023}
+      - m_Target: {fileID: 768236057}
+        m_MethodName: SetTimeToNormal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 52062880}
         m_MethodName: LoadStoryMode
         m_Mode: 1
         m_Arguments:
@@ -303,6 +315,59 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 12947399}
+--- !u!1001 &52062878
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1522303998}
+    m_Modifications:
+    - target: {fileID: 4584368000342802, guid: 57236778ffa3d8a44b85e1826d3fc25e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584368000342802, guid: 57236778ffa3d8a44b85e1826d3fc25e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584368000342802, guid: 57236778ffa3d8a44b85e1826d3fc25e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584368000342802, guid: 57236778ffa3d8a44b85e1826d3fc25e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584368000342802, guid: 57236778ffa3d8a44b85e1826d3fc25e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584368000342802, guid: 57236778ffa3d8a44b85e1826d3fc25e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584368000342802, guid: 57236778ffa3d8a44b85e1826d3fc25e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584368000342802, guid: 57236778ffa3d8a44b85e1826d3fc25e, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 57236778ffa3d8a44b85e1826d3fc25e, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &52062879 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4584368000342802, guid: 57236778ffa3d8a44b85e1826d3fc25e,
+    type: 2}
+  m_PrefabInternal: {fileID: 52062878}
+--- !u!114 &52062880 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114633922537576596, guid: 57236778ffa3d8a44b85e1826d3fc25e,
+    type: 2}
+  m_PrefabInternal: {fileID: 52062878}
+  m_Script: {fileID: 11500000, guid: 56668eb9e9b67564687e60fadde33cf0, type: 3}
 --- !u!1 &81892955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,49 +1285,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &837699022
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1162957735817984, guid: f85622ab4a4c5054aada9c75ec71a2c3,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 837699024}
-  - component: {fileID: 837699023}
-  m_Layer: 0
-  m_Name: SceneLoader
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &837699023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114965199424349188, guid: f85622ab4a4c5054aada9c75ec71a2c3,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 837699022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56668eb9e9b67564687e60fadde33cf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &837699024
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4848440810539460, guid: f85622ab4a4c5054aada9c75ec71a2c3,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 837699022}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -461.6476, y: -310.91577, z: -0.032263167}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1522303998}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &866819587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1415,7 +1437,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 837699023}
+      - m_Target: {fileID: 768236057}
+        m_MethodName: SetTimeToNormal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 52062880}
         m_MethodName: LoadMainMenu
         m_Mode: 1
         m_Arguments:
@@ -1767,8 +1800,8 @@ RectTransform:
   m_Children:
   - {fileID: 1246476041}
   - {fileID: 768236058}
-  - {fileID: 837699024}
   - {fileID: 1852130906}
+  - {fileID: 52062879}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2308,7 +2341,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1522303998}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2552,7 +2585,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 837699023}
+      - m_Target: {fileID: 768236057}
+        m_MethodName: SetTimeToNormal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 52062880}
         m_MethodName: LoadMainMenu
         m_Mode: 1
         m_Arguments:
